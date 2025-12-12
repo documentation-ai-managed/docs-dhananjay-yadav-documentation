@@ -1,0 +1,129 @@
+---
+title: User Guide
+description: Comprehensive guide on how to create, edit, and collaborate on documentation within the platform.
+---
+
+## Overview
+
+Welcome to the dhananjay yadav Documentation User Guide. You use this platform to create, organize, and collaborate on your project documentation efficiently. Start with basic document creation, then explore organization tools and team collaboration features to streamline your workflow.
+
+<Callout kind="tip">
+  Begin with a simple document to familiarize yourself with the editor. Save frequently to avoid losing changes.
+</Callout>
+
+## Creating Documents
+
+Follow these steps to create your first document.
+
+<Steps>
+  <Step title="Navigate to Projects" icon="folder">
+    Open your dashboard and select **New Project** or **New Document** from the sidebar.
+  </Step>
+  <Step title="Choose Template" icon="file-text">
+    Pick a template like **Blank Page**, **API Reference**, or **Guide** to speed up setup.
+  </Step>
+  <Step title="Add Frontmatter" icon="settings">
+    Insert YAML frontmatter at the top:
+
+````mdx
+```yaml
+---
+title: My Document
+description: A brief overview.
+---
+```
+````
+
+  </Step>
+  <Step title="Publish" icon="upload">
+    Click **Publish** to make it live. Share the generated URL with your team.
+  </Step>
+</Steps>
+
+## Editing Documents
+
+You edit documents using visual or markdown modes. Switch between them based on your preference.
+
+<Tabs>
+  <Tab title="Visual Editor" icon="edit-3">
+    Drag and drop components like images or callouts. Use the toolbar for headings, lists, and bold text.
+
+    <Image
+      src="https://via.placeholder.com/800x400/3B82F6/white?text=Visual+Editor"
+      alt="Screenshot of the visual editor interface"
+      width="800"
+      height="400"
+    />
+  </Tab>
+  <Tab title="Markdown Editor" icon="code">
+    Write raw MDX with full control. Preview changes in real-time.
+
+    <CodeGroup tabs="Basic,Advanced">
+```markdown
+## Heading
+
+Add **bold** text and `inline code`.
+```
+
+````mdx
+```mdx
+<Callout kind="info">
+  This is an embedded component.
+</Callout>
+```
+````
+    </CodeGroup>
+  </Tab>
+</Tabs>
+
+## Organizing Projects
+
+Structure your documentation for easy navigation. Use these methods to keep content accessible.
+
+<Columns cols={3}>
+  <Card title="Folders" icon="folder" href="#">
+    Create nested folders to group related documents, such as `guides/`, `api/`, and `changelog/`.
+  </Card>
+  <Card title="Tags" icon="tag" href="#">
+    Assign tags like `feature`, `bugfix`, or `draft` for quick filtering and search.
+  </Card>
+  <Card title="Search" icon="search" href="#">
+    Use the global search bar to find documents by title, content, or tags instantly.
+  </Card>
+</Columns>
+
+<Expandable title="Advanced Organization Tips" default-open="false">
+  Combine folders with tags for hybrid organization. For large projects, set up a sidebar navigation menu via project settings.
+</Expandable>
+
+## Collaboration Features
+
+Invite team members and work together seamlessly.
+
+<Steps>
+  <Step title="Invite Collaborators" icon="users">
+    Go to **Project Settings > Members** and add emails. Choose roles: **Editor**, **Viewer**, or **Admin**.
+  </Step>
+  <Step title="Real-time Editing" icon="edit-3">
+    Multiple users edit simultaneously. Changes appear live with user avatars indicating activity.
+  </Step>
+  <Step title="Version History" icon="git-branch">
+    Access **History** tab to view changes, compare versions, and restore previous states.
+
+    ```bash
+    # Example CLI for version control integration
+    git add docs/guide.mdx
+    git commit -m "Update user guide with collaboration steps"
+    git push origin main
+    ```
+  </Step>
+  <Step title="Comments & Reviews" icon="message-circle">
+    Add inline comments on specific sections. Resolve them once addressed.
+  </Step>
+</Steps>
+
+<Callout kind="success">
+  Collaboration reduces review cycles by enabling instant feedback. Use `@mentions` to notify teammates directly.
+</Callout>
+
+This guide equips you to manage documentation end-to-end. Explore project settings for custom themes using brand color `#3B82F6`.

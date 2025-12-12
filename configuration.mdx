@@ -1,0 +1,140 @@
+---
+title: Configuration Options
+description: Details on customizing the documentation space, including themes, branding, and access controls.
+---
+
+## Overview
+
+Customize your dhananjay yadav Documentation space to match your brand and control access. Configure themes, set user permissions, and integrate with external services. Start with the configuration file in your project root.
+
+<Callout kind="info">
+  Back up your current configuration before making changes.
+</Callout>
+
+## Branding and Themes
+
+Tailor the visual identity of your documentation. Set primary colors, logos, and select from predefined themes.
+
+<Columns cols={3}>
+  <Card title="Light Theme" icon="sun" href="/docs/themes/light">
+    Default theme with high contrast for readability.
+  </Card>
+  <Card title="Dark Theme" icon="moon" href="/docs/themes/dark">
+    Low-light mode for better night-time viewing.
+  </Card>
+  <Card title="Custom Brand" icon="palette" href="/docs/themes/custom">
+    Apply your brand colors and logos.
+  </Card>
+</Columns>
+
+### Apply Branding
+
+Follow these steps to update your branding.
+
+<Steps>
+  <Step title="Edit Config" icon="edit-3">
+    Open `dhananjay-config.json` in your project root.
+  </Step>
+  <Step title="Set Colors" icon="droplet">
+    Update the `branding` section with your hex colors.
+  </Step>
+  <Step title="Upload Logo" icon="upload">
+    Add your logo to the `public` folder and reference it.
+  </Step>
+  <Step title="Restart Server" icon="refresh-cw">
+    Run `npm run dev` to apply changes.
+  </Step>
+</Steps>
+
+Example configuration:
+
+<CodeGroup tabs="JSON,YAML">
+  ```json
+  {
+    "branding": {
+      "primaryColor": "#3B82F6",
+      "logo": "/logo.svg",
+      "theme": "custom"
+    }
+  }
+  ```
+  ```yaml
+  branding:
+    primaryColor: "#3B82F6"
+    logo: "/logo.svg"
+    theme: custom
+  ```
+</CodeGroup>
+
+## User Permissions
+
+Control who can view, edit, and manage your documentation. Define roles and assign users.
+
+| Role       | View | Edit | Admin |
+|------------|------|------|-------|
+| Reader     | ✅   | ❌   | ❌    |
+| Editor     | ✅   | ✅   | ❌    |
+| Admin      | ✅   | ✅   | ✅    |
+
+<Tabs>
+  <Tab title="Add User" icon="user-plus">
+    Use the admin panel to invite users by email.
+
+    ```javascript
+    // Admin API call example
+    await fetch('/api/users/invite', {
+      method: 'POST',
+      body: JSON.stringify({ email: 'user@example.com', role: 'editor' })
+    });
+    ```
+  </Tab>
+  <Tab title="Role Matrix" icon="shield">
+    Customize permissions per role in the config.
+  </Tab>
+</Tabs>
+
+<Callout kind="warning">
+  Admin roles grant full access. Assign carefully.
+</Callout>
+
+## Integration Settings
+
+Connect your documentation to external tools like analytics, search, and webhooks.
+
+<Expandable title="Advanced Integrations" default-open="false">
+  Configure Google Analytics or custom search.
+
+  ```javascript
+  // analytics.config.js
+  module.exports = {
+    googleAnalytics: {
+      trackingId: 'G-XXXXXXXXXX'
+    },
+    search: {
+      algolia: {
+        appId: 'YOUR_APP_ID',
+        apiKey: 'YOUR_SEARCH_API_KEY'
+      }
+    }
+  };
+  ```
+
+  Restart your development server after updates.
+</Expandable>
+
+### Webhook Setup
+
+Set up webhooks for deployment notifications.
+
+```javascript
+// In dhananjay-config.json
+{
+  "integrations": {
+    "webhooks": {
+      "deploy": "https://your-webhook-url.com/deploy"
+    }
+  }
+}
+```
+
+Your configuration now reflects your custom setup. Test changes in a preview environment before production deployment.

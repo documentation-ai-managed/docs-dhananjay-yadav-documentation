@@ -1,0 +1,105 @@
+---
+title: Frequently Asked Questions
+description: Common questions and answers about using the documentation platform.
+---
+
+## Account Management
+
+Manage your account settings efficiently to keep your documentation organized.
+
+<Columns cols={3}>
+  <Card title="Create Account" icon="user-plus" href="/docs/account/create">
+    Sign up in under a minute with email verification.
+  </Card>
+  <Card title="Update Profile" icon="edit" href="/docs/account/profile">
+    Change your name, avatar, and preferences anytime.
+  </Card>
+  <Card title="Delete Account" icon="trash-2" href="/docs/account/delete">
+    Permanently remove your data following our guidelines.
+  </Card>
+</Columns>
+
+<ExpandableGroup>
+  <Expandable title="How do I reset my password?" default-open="true">
+    Navigate to the login page and click `Forgot Password?`. Enter your email address. You receive a reset link valid for `{24}` hours. Click it to set a new password meeting these requirements:
+
+    - At least `{8}` characters
+    - Includes uppercase, lowercase, number, and symbol
+
+    <Callout kind="tip">
+      Enable two-factor authentication after resetting for added security.
+    </Callout>
+  </Expandable>
+
+  <Expandable title="What happens if I lose access to my email?">
+    Contact support at `support@dhananjayyadav.com` with your username and last login details. Provide proof of identity, such as a government ID screenshot. We review requests within `{48}` hours.
+  </Expandable>
+</ExpandableGroup>
+
+## Troubleshooting Tips
+
+Resolve common issues quickly with these structured steps.
+
+<Steps>
+  <Step title="Check Network Connection" icon="wifi">
+    Verify your internet speed exceeds `{5}` Mbps. Test by loading `https://api.example.com/status`.
+  </Step>
+  <Step title="Clear Browser Cache" icon="refresh-cw">
+    <Tabs>
+      <Tab title="Chrome" icon="chrome">
+        Press `Ctrl+Shift+Delete`, select `Cached images and files`, and clear data.
+      </Tab>
+      <Tab title="Firefox" icon="firefox">
+        Go to `Settings > Privacy & Security > Cookies and Site Data > Clear Data`.
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step title="Disable Extensions" icon="plug">
+    Open an incognito window and reload the page. If it works, disable extensions one by one.
+  </Step>
+</Steps>
+
+<Callout kind="alert">
+  If issues persist after these steps, capture a screenshot and share console errors from `F12 > Console`.
+</Callout>
+
+## Best Practices
+
+Follow these guidelines to optimize your documentation workflow.
+
+### Organize Content Effectively
+
+Group pages into folders by project phase: planning, development, deployment.
+
+| Practice | Benefit | Example |
+|----------|---------|---------|
+| Use H2 for main sections | Improves navigation | `## Getting Started` |
+| Add frontmatter to every page | Enables SEO and metadata | `title: My Page` |
+| Limit pages to `{1500}` words | Enhances readability | Split long guides |
+
+### Embed Documentation Snippets
+
+Share specific sections using our embed API.
+
+<CodeGroup tabs="JavaScript,Python">
+  ```javascript
+  const embedUrl = 'https://docs.dhananjayyadav.com/embed/page#section';
+  fetch(embedUrl)
+    .then(response => response.text())
+    .then(html => document.getElementById('embed').innerHTML = html);
+  ```
+  ```python
+  import requests
+  embed_url = 'https://docs.dhananjayyadav.com/embed/page#section'
+  response = requests.get(embed_url)
+  print(response.text)
+  ```
+</CodeGroup>
+
+<Expandable title="Advanced Search Tips">
+  Use quotes for exact phrases: `"API integration"`. Filter by tags: `tag:javascript`.
+</Expandable>
+
+<Callout kind="success">
+  Regularly review analytics to identify popular pages and update outdated content.
+</Callout>

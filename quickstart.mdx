@@ -1,0 +1,145 @@
+---
+title: Quickstart Guide
+description: Step-by-step instructions to set up your first documentation project and start organizing content.
+---
+
+## Overview
+
+Get started with dhananjay yadav Documentation in minutes. This guide walks you through account setup, creating your first document, and basic navigation. You will organize your project docs efficiently using this default documentation space.
+
+<Callout kind="tip">
+  Bookmark this page and keep your `{PROJECT_ID}` handy for quick reference.
+</Callout>
+
+## Prerequisites
+
+Before starting, ensure you have:
+- A modern browser (Chrome, Firefox, or Safari)
+- Node.js `{>=18.0.0}` installed
+- A GitHub account for version control
+
+Verify Node.js:
+
+<CodeGroup tabs="Terminal,NPM">
+```bash
+node --version
+```
+
+```bash
+npm --version
+```
+</CodeGroup>
+
+## Account Setup
+
+<Steps>
+  <Step title="Sign Up" icon="user-plus">
+    Visit [dhananjay yadav Documentation](https://docs.dhananjayyadav.com) and click **Sign Up**.
+
+    Enter your email and create a strong password. Verify your email via the confirmation link.
+  </Step>
+
+  <Step title="Create Workspace" icon="folder-plus">
+    After login, select **New Workspace**. Name it `my-project-docs` and choose the default template.
+
+    <Callout kind="info">
+      Workspaces organize your documentation projects. Start with one per repo.
+    </Callout>
+  </Step>
+
+  <Step title="Connect GitHub" icon="github">
+    Go to **Settings > Integrations** and authorize GitHub.
+
+    <Tabs>
+      <Tab title="Public Repo" icon="globe">
+        Select your repo: `dhananjayyadav/my-docs`.
+      </Tab>
+      <Tab title="Private Repo" icon="lock">
+        Grant access to private repos during OAuth.
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
+
+## Create Your First Document
+
+Install the CLI for local editing:
+
+````jsx
+<CodeGroup tabs="npm,yarn,pnpm">
+```bash
+npm install -g @dhananjayyadav/docs-cli
+```
+
+```bash
+yarn global add @dhananjayyadav/docs-cli
+```
+
+```bash
+pnpm add -g @dhananjayyadav/docs-cli
+```
+```
+````
+
+Initialize your project:
+
+```bash
+cd my-project-docs
+docs init
+```
+
+Edit `quickstart.mdx` and push changes:
+
+```bash
+git add .
+git commit -m "Add quickstart guide"
+git push origin main
+```
+
+Your docs update automatically in `{<5s}`.
+
+## Basic Navigation
+
+Use the sidebar to browse docs. Key sections include:
+
+| Section       | Purpose                          |
+|---------------|----------------------------------|
+| Home          | Project overview and quick links |
+| API Reference | Endpoint details                 |
+| Guides        | Tutorials and how-tos            |
+| Changelog     | Release notes                    |
+
+<Columns cols={3}>
+  <Card title="Customize Theme" icon="palette" href="/docs/customization">
+    Adjust brand color to `#3B82F6` and add logos.
+  </Card>
+
+  <Card title="Add Components" icon="puzzle" href="/docs/components">
+    Use `<Callout>`, `<Steps>`, and more for rich docs.
+  </Card>
+
+  <Card title="Search Setup" icon="search" href="/docs/search">
+    Enable full-text search across your docs.
+  </Card>
+</Columns>
+
+## Next Steps
+
+Explore advanced features:
+
+<Expandable title="Advanced Configuration" default-open="false">
+  Edit `docusaurus.config.js`:
+
+  ```javascript
+  module.exports = {
+    themeConfig: {
+      colorMode: { defaultMode: 'light' },
+      navbar: { title: 'dhananjay yadav Docs' },
+    },
+  };
+  ```
+
+  Restart dev server: `docs dev`.
+</Expandable>
+
+You now have a fully functional documentation site. Publish to a custom domain next.

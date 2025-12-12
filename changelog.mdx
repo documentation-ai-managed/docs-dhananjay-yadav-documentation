@@ -1,0 +1,136 @@
+---
+title: Changelog
+description: History of updates and new features released for the Dhananjay Yadav Documentation platform.
+---
+
+## Overview
+
+Stay current with the latest enhancements to the Dhananjay Yadav Documentation platform. You receive regular updates that introduce new features, performance improvements, and bug fixes. Review the recent releases below to understand changes and upgrade your setup.
+
+<Callout kind="info">
+  Bookmark this page and check back monthly. Enable auto-updates in your dashboard to receive notifications for major releases.
+</Callout>
+
+<Columns cols={3}>
+  <Card title="Latest: v1.3.0" icon="zap" href="#v130">
+    Real-time collaboration and AI-powered search.
+  </Card>
+  <Card title="v1.2.0" icon="trending-up" href="#v120">
+    Enhanced editor with version history.
+  </Card>
+  <Card title="v1.1.0" icon="package" href="#v110">
+    Multi-language support and API improvements.
+  </Card>
+</Columns>
+
+## Upgrade Instructions
+
+Follow these steps to update your documentation site to the latest version.
+
+<Steps>
+  <Step title="Backup Your Site" icon="database">
+    Export your current configuration and content.
+
+    ```bash
+    npx dhananjay-docs export --backup ./my-backup
+    ```
+  </Step>
+  <Step title="Install Update" icon="download">
+    Pull the latest release using your package manager.
+  </Step>
+  <Step title="Platform-Specific Update" icon="terminal">
+    Choose your platform below.
+  </Step>
+</Steps>
+
+<Tabs>
+  <Tab title="npm" icon="package">
+    ```bash
+    npm install dhananjay-docs@latest
+    npx dhananjay-docs migrate
+    ```
+  </Tab>
+  <Tab title="Yarn" icon="package">
+    ```bash
+    yarn add dhananjay-docs@latest
+    npx dhananjay-docs migrate
+    ```
+  </Tab>
+  <Tab title="Docker" icon="docker">
+    ```bash
+    docker pull dhananjaydocs/latest
+    docker-compose up -d
+    ```
+  </Tab>
+</Tabs>
+
+## Recent Releases
+
+<Update label="2024-11-05" description="v1.3.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added real-time collaboration for teams.
+- Introduced AI-powered search across all documents.
+
+## Improvements
+
+- Faster page rendering by 40%.
+- Better mobile responsiveness.
+
+## Bug Fixes
+
+- Fixed markdown parsing for nested lists.
+- Resolved authentication token expiration issues.
+
+</Update>
+
+<Update label="2024-10-15" description="v1.2.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- Version history with diff viewer.
+- Custom themes via CSS variables.
+
+## Bug Fixes
+
+- Corrected image upload failures.
+- Fixed sidebar navigation on RTL languages.
+
+<CodeGroup tabs="Before,After">
+```javascript
+// Before: Manual versioning
+const versions = saveDocument(doc);
+```
+```javascript
+// After: Built-in history
+const history = await docs.history.get(doc.id);
+```
+</CodeGroup>
+
+</Update>
+
+<Update label="2024-09-10" description="v1.1.0" tags={["feature"]}>
+
+## New Features
+
+- Multi-language document support.
+- Public API for integrations.
+
+## Improvements
+
+- Search indexing reduced by 50%.
+
+</Update>
+
+## Older Versions
+
+<ExpandableGroup>
+  <Expandable title="v1.0.0 (2024-08-01)" default-open="false">
+    Initial release with core documentation engine, MDX support, and basic theming.
+  </Expandable>
+</ExpandableGroup>
+
+<Callout kind="tip">
+  Report issues or suggest features on GitHub. You help shape the platform's future.
+</Callout>
